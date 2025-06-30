@@ -1,4 +1,4 @@
-# AILP3 (AI Literacy Partnership for Public Purpose) - Day One
+# AILP3 (AI Literacy Pipeline to Prosperity Project) - Day One
 
 ## Empowering Atlanta Youth in the AI Economy
 
