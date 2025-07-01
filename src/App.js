@@ -799,30 +799,51 @@ const AIEconomyHub = () => {
 
             {/* Growth Visualization */}
             <div className="relative h-64 bg-gray-50 rounded-lg p-4">
-              <div className="absolute bottom-0 left-0 right-0 flex items-end justify-between h-full">
+              {/* Y-axis labels */}
+              <div className="absolute left-2 top-0 h-full flex flex-col justify-between text-xs text-gray-500 py-4">
+                <span>$3.68T</span>
+                <span>$2.95T</span>
+                <span>$2.21T</span>
+                <span>$1.47T</span>
+                <span>$0.74T</span>
+                <span>$0.18T</span>
+              </div>
+              <div className="absolute bottom-0 left-12 right-0 flex items-end justify-between h-full">
                 <div className="flex-1 flex flex-col items-center justify-end">
-                  <div className="w-16 bg-gradient-to-t from-indigo-500 to-indigo-600 rounded-t" style={{height: '10%'}}></div>
-                  <span className="text-xs mt-2">2024</span>
+                  <div className="w-12 bg-gradient-to-t from-indigo-500 to-indigo-600 rounded-t shadow-md" style={{height: '10%'}}>
+                    <div className="text-xs text-white font-bold p-1 text-center">$184B</div>
+                  </div>
+                  <span className="text-xs mt-2 font-medium">2024</span>
                 </div>
                 <div className="flex-1 flex flex-col items-center justify-end">
-                  <div className="w-16 bg-gradient-to-t from-indigo-500 to-indigo-600 rounded-t" style={{height: '25%'}}></div>
-                  <span className="text-xs mt-2">2026</span>
+                  <div className="w-12 bg-gradient-to-t from-indigo-500 to-indigo-600 rounded-t shadow-md" style={{height: '25%'}}>
+                    <div className="text-xs text-white font-bold p-1 text-center">$461B</div>
+                  </div>
+                  <span className="text-xs mt-2 font-medium">2026</span>
                 </div>
                 <div className="flex-1 flex flex-col items-center justify-end">
-                  <div className="w-16 bg-gradient-to-t from-purple-500 to-purple-600 rounded-t" style={{height: '45%'}}></div>
-                  <span className="text-xs mt-2">2028</span>
+                  <div className="w-12 bg-gradient-to-t from-purple-500 to-purple-600 rounded-t shadow-md" style={{height: '45%'}}>
+                    <div className="text-xs text-white font-bold p-1 text-center">$1.1T</div>
+                  </div>
+                  <span className="text-xs mt-2 font-medium">2028</span>
                 </div>
                 <div className="flex-1 flex flex-col items-center justify-end">
-                  <div className="w-16 bg-gradient-to-t from-purple-500 to-purple-600 rounded-t" style={{height: '70%'}}></div>
-                  <span className="text-xs mt-2">2030</span>
+                  <div className="w-12 bg-gradient-to-t from-purple-500 to-purple-600 rounded-t shadow-md" style={{height: '70%'}}>
+                    <div className="text-xs text-white font-bold p-1 text-center">$1.8T</div>
+                  </div>
+                  <span className="text-xs mt-2 font-medium">2030</span>
                 </div>
                 <div className="flex-1 flex flex-col items-center justify-end">
-                  <div className="w-16 bg-gradient-to-t from-green-500 to-green-600 rounded-t" style={{height: '90%'}}></div>
-                  <span className="text-xs mt-2">2032</span>
+                  <div className="w-12 bg-gradient-to-t from-green-500 to-green-600 rounded-t shadow-md" style={{height: '90%'}}>
+                    <div className="text-xs text-white font-bold p-1 text-center">$2.7T</div>
+                  </div>
+                  <span className="text-xs mt-2 font-medium">2032</span>
                 </div>
                 <div className="flex-1 flex flex-col items-center justify-end">
-                  <div className="w-16 bg-gradient-to-t from-green-500 to-green-600 rounded-t" style={{height: '100%'}}></div>
-                  <span className="text-xs mt-2">2034</span>
+                  <div className="w-12 bg-gradient-to-t from-green-500 to-green-600 rounded-t shadow-md" style={{height: '100%'}}>
+                    <div className="text-xs text-white font-bold p-1 text-center">$3.7T</div>
+                  </div>
+                  <span className="text-xs mt-2 font-medium">2034</span>
                 </div>
               </div>
             </div>
@@ -996,28 +1017,28 @@ const AIEconomyHub = () => {
           </div>
 
           {/* AI Career Stats */}
-          <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl p-8 mb-12 shadow-2xl">
+          <div className="bg-gray-50 rounded-2xl p-8 mb-12 shadow-2xl border">
             <div className="text-center">
-              <h3 className="text-3xl font-bold mb-6">The AI Job Boom is Real</h3>
+              <h3 className="text-3xl font-bold mb-6 text-gray-800">The AI Job Boom is Real</h3>
               <div className="grid md:grid-cols-4 gap-4">
-                <div className="bg-white/20 rounded-xl p-4">
-                  <div className="text-3xl font-bold">2.4M</div>
-                  <div className="text-sm">AI jobs by 2025</div>
+                <div className="bg-white rounded-xl p-4 shadow-sm border">
+                  <div className="text-3xl font-bold text-orange-600">2.4M</div>
+                  <div className="text-sm text-gray-600">AI jobs by 2025</div>
                 </div>
-                <div className="bg-white/20 rounded-xl p-4">
-                  <div className="text-3xl font-bold">74%</div>
-                  <div className="text-sm">Annual job growth</div>
+                <div className="bg-white rounded-xl p-4 shadow-sm border">
+                  <div className="text-3xl font-bold text-red-600">74%</div>
+                  <div className="text-sm text-gray-600">Annual job growth</div>
                 </div>
-                <div className="bg-white/20 rounded-xl p-4">
-                  <div className="text-3xl font-bold">$146K</div>
-                  <div className="text-sm">Average AI salary</div>
+                <div className="bg-white rounded-xl p-4 shadow-sm border">
+                  <div className="text-3xl font-bold text-green-600">$146K</div>
+                  <div className="text-sm text-gray-600">Average AI salary</div>
                 </div>
-                <div className="bg-white/20 rounded-xl p-4">
-                  <div className="text-3xl font-bold">45%</div>
-                  <div className="text-sm">No degree required</div>
+                <div className="bg-white rounded-xl p-4 shadow-sm border">
+                  <div className="text-3xl font-bold text-blue-600">45%</div>
+                  <div className="text-sm text-gray-600">No degree required</div>
                 </div>
               </div>
-              <p className="mt-6 text-xl">Entry-level positions starting at $60K+ with just certificates!</p>
+              <p className="mt-6 text-xl text-gray-700">Entry-level positions starting at $60K+ with just certificates!</p>
             </div>
           </div>
 
