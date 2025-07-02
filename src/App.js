@@ -45,11 +45,11 @@ const AIEconomyHub = () => {
 
   // G-Data Labs Logo Component
   const GDataLabsLogo = () => (
-    <div className="flex items-center gap-3">
-      <img src="light_logo_1024.png" alt="G-Data Labs" className="h-12 w-auto" />
+    <div className="flex items-center gap-2 sm:gap-3">
+      <img src="light_logo_1024.png" alt="G-Data Labs" className="h-10 sm:h-12 w-auto" />
       <div>
-        <h1 className="text-xl font-bold text-gray-800">G-Data Labs</h1>
-        <p className="text-xs text-gray-600">AI Economy Education</p>
+        <h1 className="text-lg sm:text-xl font-bold text-gray-800">G-Data Labs</h1>
+        <p className="text-xs text-gray-600 hidden sm:block">AI Economy Education</p>
       </div>
     </div>
   );
@@ -58,8 +58,8 @@ const AIEconomyHub = () => {
     <div className="min-h-screen bg-gray-50">
       {/* Navigation */}
       <nav className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
+        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+          <div className="flex justify-between items-center h-16 sm:h-20">
             <GDataLabsLogo />
             
             {/* Desktop Navigation */}
@@ -74,21 +74,22 @@ const AIEconomyHub = () => {
             {/* Mobile menu button */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 touch-target"
+              aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t">
-              <div className="flex flex-col space-y-4">
-                <a href="#home" className="text-gray-700 hover:text-indigo-600 font-medium">Home</a>
-                <a href="#learn" className="text-gray-700 hover:text-indigo-600 font-medium">Learn AI</a>
-                <a href="#earn" className="text-gray-700 hover:text-indigo-600 font-medium">Earn Money</a>
-                <a href="#careers" className="text-gray-700 hover:text-indigo-600 font-medium">Careers</a>
-                <a href="#resources" className="text-gray-700 hover:text-indigo-600 font-medium">Resources</a>
+            <div className="md:hidden py-4 border-t bg-white">
+              <div className="flex flex-col space-y-3">
+                <a href="#home" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Home</a>
+                <a href="#learn" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Learn AI</a>
+                <a href="#earn" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Earn Money</a>
+                <a href="#careers" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Careers</a>
+                <a href="#resources" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Resources</a>
               </div>
             </div>
           )}
@@ -151,37 +152,37 @@ const AIEconomyHub = () => {
       {/* Hero Section */}
       <section id="home" className="relative bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 text-white">
         <div className="absolute inset-0 bg-black opacity-10"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
           <div className="text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-fade-in-up leading-tight">
               Your AI Journey Starts Here
             </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200">
+            <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto animate-fade-in-up animation-delay-200 leading-relaxed">
               Learn to create with AI, monetize your data, and discover high-paying careers in the AI economy
             </p>
-            <div className="flex flex-wrap gap-4 justify-center animate-fade-in-up animation-delay-400">
-              <a href="#earn" className="bg-white text-indigo-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transform hover:scale-105 transition-all shadow-lg">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400 px-4">
+              <a href="#earn" className="bg-white text-indigo-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:bg-gray-100 transform hover:scale-105 transition-all shadow-lg text-center touch-target">
                 Start Earning Now <ChevronRight className="inline ml-2" size={20} />
               </a>
-              <a href="#learn" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-indigo-600 transform hover:scale-105 transition-all">
+              <a href="#learn" className="bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:bg-white hover:text-indigo-600 transform hover:scale-105 transition-all text-center touch-target">
                 Explore AI Tools
               </a>
             </div>
           </div>
           
           {/* Hero Stats */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
-            <div className="text-center animate-fade-in-up animation-delay-600">
-              <div className="text-4xl font-bold mb-2">$220+</div>
-              <div className="text-lg opacity-90">Monthly Earning Potential</div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 max-w-4xl mx-auto">
+            <div className="text-center animate-fade-in-up animation-delay-600 bg-white bg-opacity-10 rounded-lg p-4 sm:bg-transparent sm:p-0">
+              <div className="text-3xl sm:text-4xl font-bold mb-2">$220+</div>
+              <div className="text-base sm:text-lg opacity-90">Monthly Earning Potential</div>
             </div>
-            <div className="text-center animate-fade-in-up animation-delay-700">
-              <div className="text-4xl font-bold mb-2">$80K+</div>
-              <div className="text-lg opacity-90">Entry-Level AI Salaries</div>
+            <div className="text-center animate-fade-in-up animation-delay-700 bg-white bg-opacity-10 rounded-lg p-4 sm:bg-transparent sm:p-0">
+              <div className="text-3xl sm:text-4xl font-bold mb-2">$80K+</div>
+              <div className="text-base sm:text-lg opacity-90">Entry-Level AI Salaries</div>
             </div>
-            <div className="text-center animate-fade-in-up animation-delay-800">
-              <div className="text-4xl font-bold mb-2">5</div>
-              <div className="text-lg opacity-90">Free AI Tools to Master</div>
+            <div className="text-center animate-fade-in-up animation-delay-800 bg-white bg-opacity-10 rounded-lg p-4 sm:bg-transparent sm:p-0">
+              <div className="text-3xl sm:text-4xl font-bold mb-2">5</div>
+              <div className="text-base sm:text-lg opacity-90">Free AI Tools to Master</div>
             </div>
           </div>
         </div>
@@ -1043,89 +1044,108 @@ const AIEconomyHub = () => {
           </div>
 
           {/* Career Timeline */}
-          <div className="space-y-8">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-white">
-                    <Target size={24} />
+          <div className="space-y-6 sm:space-y-8">
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative">
+              <div className="flex-1 bg-white rounded-2xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow border-l-4 border-green-500">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <Target size={20} className="sm:hidden" />
+                    <Target size={24} className="hidden sm:block" />
                   </div>
-                  <h4 className="text-xl font-bold">Start Today (No Experience)</h4>
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-800">Start Today (No Experience)</h4>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span>Data Annotator</span>
-                    <span className="font-bold text-green-600">$30-50k</span>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="text-sm sm:text-base">Data Annotator</span>
+                    <span className="font-bold text-green-600 text-sm sm:text-base">$30-50k</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>AI Content Creator</span>
-                    <span className="font-bold text-green-600">$40-60k</span>
-                  </div>
-                </div>
-              </div>
-              <ChevronRight className="text-gray-400 hidden md:block" size={32} />
-            </div>
-
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white">
-                    <TrendingUp size={24} />
-                  </div>
-                  <h4 className="text-xl font-bold">6 Months (With Learning)</h4>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span>Prompt Engineer</span>
-                    <span className="font-bold text-green-600">$60-80k</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>AI Assistant Trainer</span>
-                    <span className="font-bold text-green-600">$50-70k</span>
+                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="text-sm sm:text-base">AI Content Creator</span>
+                    <span className="font-bold text-green-600 text-sm sm:text-base">$40-60k</span>
                   </div>
                 </div>
               </div>
-              <ChevronRight className="text-gray-400 hidden md:block" size={32} />
+              <div className="hidden md:flex">
+                <ChevronRight className="text-gray-400" size={32} />
+              </div>
+              <div className="md:hidden w-full flex justify-center">
+                <div className="w-0.5 h-8 bg-gradient-to-b from-green-500 to-blue-500"></div>
+              </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center text-white">
-                    <Zap size={24} />
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative">
+              <div className="flex-1 bg-white rounded-2xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow border-l-4 border-blue-500">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <TrendingUp size={20} className="sm:hidden" />
+                    <TrendingUp size={24} className="hidden sm:block" />
                   </div>
-                  <h4 className="text-xl font-bold">1-2 Years (With Skills)</h4>
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-800">6 Months (With Learning)</h4>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span>Junior AI Developer</span>
-                    <span className="font-bold text-green-600">$80-120k</span>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="text-sm sm:text-base">Prompt Engineer</span>
+                    <span className="font-bold text-green-600 text-sm sm:text-base">$60-80k</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>AI Product Manager</span>
-                    <span className="font-bold text-green-600">$90-130k</span>
+                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="text-sm sm:text-base">AI Assistant Trainer</span>
+                    <span className="font-bold text-green-600 text-sm sm:text-base">$50-70k</span>
                   </div>
                 </div>
               </div>
-              <ChevronRight className="text-gray-400 hidden md:block" size={32} />
+              <div className="hidden md:flex">
+                <ChevronRight className="text-gray-400" size={32} />
+              </div>
+              <div className="md:hidden w-full flex justify-center">
+                <div className="w-0.5 h-8 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+              </div>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-2xl shadow-lg p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                    <Award className="text-purple-500" size={24} />
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8 relative">
+              <div className="flex-1 bg-white rounded-2xl shadow-lg p-4 sm:p-6 hover:shadow-xl transition-shadow border-l-4 border-purple-500">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-purple-500 rounded-full flex items-center justify-center text-white shadow-lg">
+                    <Zap size={20} className="sm:hidden" />
+                    <Zap size={24} className="hidden sm:block" />
                   </div>
-                  <h4 className="text-xl font-bold">Future You</h4>
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-800">1-2 Years (With Skills)</h4>
                 </div>
-                <div className="space-y-2">
-                  <div className="flex justify-between">
-                    <span>AI Ethics Consultant</span>
-                    <span className="font-bold">$150-500/hour</span>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="text-sm sm:text-base">Junior AI Developer</span>
+                    <span className="font-bold text-green-600 text-sm sm:text-base">$80-120k</span>
                   </div>
-                  <div className="flex justify-between">
-                    <span>AI Startup Founder</span>
-                    <span className="font-bold">Sky's the limit!</span>
+                  <div className="flex justify-between items-center bg-gray-50 p-2 rounded">
+                    <span className="text-sm sm:text-base">AI Product Manager</span>
+                    <span className="font-bold text-green-600 text-sm sm:text-base">$90-130k</span>
+                  </div>
+                </div>
+              </div>
+              <div className="hidden md:flex">
+                <ChevronRight className="text-gray-400" size={32} />
+              </div>
+              <div className="md:hidden w-full flex justify-center">
+                <div className="w-0.5 h-8 bg-gradient-to-b from-purple-500 to-indigo-500"></div>
+              </div>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-8">
+              <div className="flex-1 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-2xl shadow-lg p-4 sm:p-6 border-l-4 border-yellow-400">
+                <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+                    <Award className="text-purple-500 sm:hidden" size={20} />
+                    <Award className="text-purple-500 hidden sm:block" size={24} />
+                  </div>
+                  <h4 className="text-lg sm:text-xl font-bold">Future You</h4>
+                </div>
+                <div className="space-y-2 sm:space-y-3">
+                  <div className="flex justify-between items-center bg-white bg-opacity-20 p-2 rounded">
+                    <span className="text-sm sm:text-base">AI Ethics Consultant</span>
+                    <span className="font-bold text-sm sm:text-base">$150-500/hour</span>
+                  </div>
+                  <div className="flex justify-between items-center bg-white bg-opacity-20 p-2 rounded">
+                    <span className="text-sm sm:text-base">AI Startup Founder</span>
+                    <span className="font-bold text-sm sm:text-base">Sky's the limit!</span>
                   </div>
                 </div>
               </div>

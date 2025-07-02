@@ -15,3 +15,24 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Mobile optimization styles */
+@layer utilities {
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Smooth scrolling for navigation links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improve text readability on mobile */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
