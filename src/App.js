@@ -56,48 +56,79 @@ const AIEconomyHub = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Navigation */}
-      <nav className="bg-white shadow-lg sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
-          <div className="flex justify-between items-center h-16 sm:h-20">
-            <GDataLabsLogo />
-            
+      {/* Header */}
+      <header className="fixed top-0 w-full bg-white/80 backdrop-blur-lg z-50 px-4 sm:px-6 py-3 border-b border-slate-200">
+        {/* Main container: stacks vertically on small screens, becomes a row on larger screens */}
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+          
+          {/* Group 1: Icon, Title, Subtitle. This will be the top element on mobile. */}
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-gradient-to-tr from-blue-600 to-blue-400 rounded-lg shadow-md">
+              <Brain className="w-6 h-6 text-white" />
+            </div>
+            <div>
+              <h1 className="text-lg sm:text-xl font-bold text-slate-900">
+                G-Data Labs AI Economy Hub
+              </h1>
+              <p className="text-xs text-slate-500">Your Data, Your Dollars, Your Future</p>
+            </div>
+          </div>
+          
+          {/* Group 2: Edition, Progress Bar. This will be the bottom element on mobile. */}
+          <div className="flex items-center self-end sm:self-center gap-4">
+            <div className="text-sm text-slate-500">Atlanta High School Edition</div>
+            <div className="flex items-center gap-2">
+              <div className="w-16 bg-gray-200 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full transition-all duration-500"
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </div>
+              <span className="text-xs text-slate-500">{Math.round(progress)}%</span>
+            </div>
+          </div>
+
+        </div>
+        
+        {/* Navigation Menu */}
+        <div className="max-w-7xl mx-auto mt-3 pt-3 border-t border-slate-100">
+          <div className="flex items-center justify-between">
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#home" className="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Home</a>
-              <a href="#learn" className="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Learn AI</a>
-              <a href="#earn" className="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Earn Money</a>
-              <a href="#careers" className="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Careers</a>
-              <a href="#resources" className="text-gray-700 hover:text-indigo-600 font-medium transition-colors">Resources</a>
+            <div className="hidden md:flex items-center space-x-6">
+              <a href="#home" className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Home</a>
+              <a href="#learn" className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Learn AI</a>
+              <a href="#earn" className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Earn Money</a>
+              <a href="#careers" className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Careers</a>
+              <a href="#resources" className="text-slate-600 hover:text-blue-600 font-medium transition-colors text-sm">Resources</a>
             </div>
 
             {/* Mobile menu button */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 touch-target"
+              className="md:hidden p-2 rounded-lg hover:bg-slate-100 touch-target"
               aria-label="Toggle navigation menu"
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
 
           {/* Mobile Navigation */}
           {mobileMenuOpen && (
-            <div className="md:hidden py-4 border-t bg-white">
-              <div className="flex flex-col space-y-3">
-                <a href="#home" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Home</a>
-                <a href="#learn" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Learn AI</a>
-                <a href="#earn" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Earn Money</a>
-                <a href="#careers" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Careers</a>
-                <a href="#resources" className="text-gray-700 hover:text-indigo-600 font-medium py-2 px-2 rounded hover:bg-gray-50 touch-target" onClick={() => setMobileMenuOpen(false)}>Resources</a>
+            <div className="md:hidden mt-3 pt-3 border-t border-slate-100">
+              <div className="flex flex-col space-y-2">
+                <a href="#home" className="text-slate-600 hover:text-blue-600 font-medium py-2 px-2 rounded hover:bg-slate-50 touch-target text-sm" onClick={() => setMobileMenuOpen(false)}>Home</a>
+                <a href="#learn" className="text-slate-600 hover:text-blue-600 font-medium py-2 px-2 rounded hover:bg-slate-50 touch-target text-sm" onClick={() => setMobileMenuOpen(false)}>Learn AI</a>
+                <a href="#earn" className="text-slate-600 hover:text-blue-600 font-medium py-2 px-2 rounded hover:bg-slate-50 touch-target text-sm" onClick={() => setMobileMenuOpen(false)}>Earn Money</a>
+                <a href="#careers" className="text-slate-600 hover:text-blue-600 font-medium py-2 px-2 rounded hover:bg-slate-50 touch-target text-sm" onClick={() => setMobileMenuOpen(false)}>Careers</a>
+                <a href="#resources" className="text-slate-600 hover:text-blue-600 font-medium py-2 px-2 rounded hover:bg-slate-50 touch-target text-sm" onClick={() => setMobileMenuOpen(false)}>Resources</a>
               </div>
             </div>
           )}
         </div>
-      </nav>
+      </header>
 
       {/* Partner Logos Section */}
-      <section className="bg-white border-b border-gray-200 py-8">
+      <section className="bg-white border-b border-gray-200 py-8 mt-32 sm:mt-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h3 className="text-lg font-semibold text-gray-600">In Partnership With</h3>
